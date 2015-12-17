@@ -4,51 +4,176 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Bede People</title>
-
-  <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,500' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="site.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <body>
 
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span3 sidebar">
-      <div class="search">
-        <input/>
+<div class="header">
+  <div class="logo">
+    <h1>Bede People</h1>
+  </div>
+  <div class="menu">
+    menu
+  </div>
+  <div class="user">
+    Jake Scutt
+  </div>
+</div>
+
+<div class="sidebar">
+  <div class="nav">
+    <div class="search">
+      <input type="text" placeholder="Search">
+    </div>
+    <div class="filters">
+      <div class="filter-category">
+        <h2>Skills</h2>
+        <ul>
+          <li class="css">CSS</li>
+          <li class="js">JS</li>
+          <li class="html">HTML</li>
+        </ul>
+      </div>
+      <div class="filter-category">
+        <h2>Role</h2>
+        <ul>
+          <li class="css">Front End</li>
+          <li class="js">Back End</li>
+          <li class="html">Project Manager</li>
+        </ul>
+      </div>
+      <div class="filter-category">
+          <h2>Skills</h2>
+          <ul>
+            <li class="css">CSS</li>
+            <li class="js">JS</li>
+            <li class="html">HTML</li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="span9 content">
-      <ul>
-        <li>
-          <div class="person">
-            person 1
-          </div>
-        </li>
-         <li>
-          <div class="person">
-            person 2
-          </div>
-        </li>
-         <li>
-          <div class="person">
-            person 3
-          </div>
-        </li>
-         <li>
-          <div class="person">
-            person 4
-          </div>
-        </li>
-         <li>
-          <div class="person">
-            person 5
-          </div>
-        </li>
+  </div>
+</div>
+
+<div class="content">
+  <div class="person">
+    <div class="image">
+      <div class="image-crop">
+        <img src="https://avatars2.githubusercontent.com/u/10399686?v=3&s=460" />
+      </div>
+    </div>
+    <div class="information">
+      <div class="name">Person 1</div>
+      <div class="job">job role</div>
+      <div class="slack"><a href="">slack</a></div>
+      <ul class="skills">
+        <li class="css">CSS</li>
+        <li class="js">JS</li>
+        <li class="html">HTML</li>
+        <li class="css">CSS</li>
+        <li class="js">JS</li>
+        <li class="html">HTML</li>
+      </ul>
+    </div>
+  </div>
+  <div class="person">
+    <div class="image">
+      <div class="image-crop">
+        <img src="https://avatars2.githubusercontent.com/u/10399686?v=3&s=460" />
+      </div>
+    </div>
+    <div class="information">
+      <div class="name">Person 1</div>
+      <div class="job">job role</div>
+      <div class="slack"><a href="">slack</a></div>
+      <ul class="skills">
+        <li class="css">CSS</li>
+        <li class="js">JS</li>
+        <li class="html">HTML</li>
+        <li class="css">CSS</li>
+        <li class="js">JS</li>
+        <li class="html">HTML</li>
+      </ul>
+    </div>
+  </div>
+  <div class="person">
+    <div class="image">
+      <div class="image-crop">
+        <img src="https://avatars2.githubusercontent.com/u/10399686?v=3&s=460" />
+      </div>
+    </div>
+    <div class="information">
+      <div class="name">Person 1</div>
+      <div class="job">job role</div>
+      <div class="slack"><a href="">slack</a></div>
+      <ul class="skills">
+        <li class="css">CSS</li>
+        <li class="js">JS</li>
+        <li class="html">HTML</li>
+        <li class="css">CSS</li>
+        <li class="js">JS</li>
+        <li class="html">HTML</li>
+      </ul>
+    </div>
+  </div>
+  <div class="person">
+    <div class="image">
+      <div class="image-crop">
+        <img src="https://avatars2.githubusercontent.com/u/10399686?v=3&s=460" />
+      </div>
+    </div>
+    <div class="information">
+      <div class="name">Person 1</div>
+      <div class="job">job role</div>
+      <div class="slack"><a href="">slack</a></div>
+      <ul class="skills">
+        <li class="css">CSS</li>
+        <li class="js">JS</li>
+        <li class="html">HTML</li>
+        <li class="css">CSS</li>
+        <li class="js">JS</li>
+        <li class="html">HTML</li>
+      </ul>
+    </div>
+  </div>
+  <div class="person">
+    <div class="image">
+      <div class="image-crop">
+        <img src="https://avatars2.githubusercontent.com/u/10399686?v=3&s=460" />
+      </div>
+    </div>
+    <div class="information">
+      <div class="name">Person 1</div>
+      <div class="job">job role</div>
+      <div class="slack"><a href="">slack</a></div>
+      <ul class="skills">
+        <li class="css">CSS</li>
+        <li class="js">JS</li>
+        <li class="html">HTML</li>
+        <li class="css">CSS</li>
+        <li class="js">JS</li>
+        <li class="html">HTML</li>
       </ul>
     </div>
   </div>
 </div>
+
+<script>
+$(function(){
+  var nav = $('.sidebar'),
+      navBut = $('.menu');
   
+  navBut.click(function(){
+    if(nav.width() === 0){
+      nav.stop().animate({ width: '100%', opacity: '1.0' }, 300);
+    } else {
+      nav.stop().animate({ width: '0', opacity: '0.0' }, 300);
+    }
+  });
+})
+</script>
   
 </body>
 </html>
