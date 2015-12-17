@@ -1,0 +1,20 @@
+.sidebar {
+  background: red;
+}
+.content {
+  background: green;
+}
+.content ul {
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  margin: 0;
+}
+.content ul li {
+  width: 33.3%;
+  background: yellow;
+}
+.content ul li .person {
+  margin: 10px;
+  background: white;
+}
