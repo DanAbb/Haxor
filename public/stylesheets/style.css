@@ -12,13 +12,12 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 .sidebar {
-  position: fixed;
   margin-top: 60px;
-  height: 100vh;
-  min-width: 200px;
+  width: 250px;
   background: #262B33;
   overflow: hidden;
   box-shadow: 2px 0 2px 0 rgba(0, 0, 0, 0.12);
+  min-height: 100vh;
 }
 .sidebar .nav {
   padding: 10px;
@@ -59,12 +58,6 @@ body {
 .sidebar .nav .filters .filter-category ul li.skill.js {
   background: #C5E1A5;
 }
-.sidebar .nav .filters .filter-category ul li:after {
-  content: 'x';
-  color: #fff;
-  position: absolute;
-  right: 10px;
-}
 .header {
   background: #fff;
   display: flex;
@@ -75,7 +68,7 @@ body {
   z-index: 1;
 }
 .header .logo {
-  min-width: 200px;
+  width: 250px;
 }
 .header .logo h1 {
   font-weight: 700;
@@ -110,12 +103,16 @@ body {
   font-size: 20px;
   font-weight: 700;
   flex: 1;
+  cursor: pointer;
+}
+.header .user:hover {
+  color: #009688;
 }
 .content {
   flex: 1;
   min-width: 400px;
   border-bottom-left-radius: 5px;
-  margin: 60px 0 0 200px;
+  margin: 60px 0 0;
 }
 .content:before {
   min-width: 180px;
@@ -200,4 +197,13 @@ body {
 }
 .content .person .information ul.skills li.js {
   background: #C5E1A5;
+}
+.department li {
+  cursor: pointer;
+}
+.department li:hover {
+  text-decoration: underline;
+}
+.department li.active {
+  color: #009688!important;
 }
