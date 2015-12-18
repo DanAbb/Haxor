@@ -1,8 +1,53 @@
 extends layout
 
 block content
-  .employees
+  .header
+    .logo
+      h1 Bede People
+    .menu
+      | menu
+    .user
+      | Jake Scutt
+  .sidebar
+    .nav
+      .search
+        input(type='text', placeholder='Search')
+      .filters
+        .filter-category
+          h2 Skills
+          ul
+            li.css CSS
+            li.js JS
+            li.html HTML
+        .filter-category
+          h2 Role
+          ul
+            li.css Front End
+            li.js Back End
+            li.html Project Manager
+        .filter-category
+          h2 Skills
+          ul
+            li.css CSS
+            li.js JS
+            li.html HTML
+  .content
     each item in dave
-      h2
-        span= item.FirstName.DisplayValue
-        span= item.LastName.DisplayValue
+      .person
+        .image
+          .image-crop
+            img(src=item.EmployeeImage)
+        .information
+          .name 
+            span= item.FirstName.DisplayValue
+            span= item.LastName.DisplayValue
+          .job= item.JobRole.DisplayValue
+          .slack
+            a(href='') slack
+          ul.skills
+            li.css CSS
+            li.js JS
+            li.html HTML
+            li.css CSS
+            li.js JS
+            li.html HTML
