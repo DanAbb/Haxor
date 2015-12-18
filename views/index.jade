@@ -1,6 +1,8 @@
 extends layout
 
 block content
+  script.
+    var query = searchQuery(!{JSON.stringify(dave)})
   .header
     .logo
       h1 Bede People

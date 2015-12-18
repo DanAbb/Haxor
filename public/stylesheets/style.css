@@ -160,7 +160,7 @@ body {
   padding: 10px 0;
 }
 .content .person .information .slack {
-  background: url('images/slack.png') no-repeat;
+  background: url('/images/slack.png') no-repeat;
   background-size: 20px 20px;
   position: absolute;
   height: 20px;
