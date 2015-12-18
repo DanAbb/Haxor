@@ -4,33 +4,31 @@ block content
   .header
     .logo
       h1 Bede People
-    .menu
-      | menu
+    .search
+      input(type='text', placeholder='Search')
     .user
-      | Jake Scutt
+      | User
   .sidebar
     .nav
-      .search
-        input(type='text', placeholder='Search')
       .filters
         .filter-category
           h2 Skills
           ul
-            li.css CSS
-            li.js JS
-            li.html HTML
+            li.skill.css CSS
+            li.skill.js JS
+            li.skill.html HTML
         .filter-category
           h2 Role
           ul
-            li.css Front End
-            li.js Back End
-            li.html Project Manager
+            li Front End
+            li Back End
+            li Project Manager
         .filter-category
-          h2 Skills
+          h2 Project
           ul
-            li.css CSS
-            li.js JS
-            li.html HTML
+            li High 5 Casino
+            li Grosvenor Casino
+            li Bingo Stars
   .content
     each item in dave
       .person
@@ -44,10 +42,9 @@ block content
           .job= item.JobRole.DisplayValue
           .slack
             a(href='') slack
+          .git
+            a(href='') git
           ul.skills
-            li.css CSS
-            li.js JS
-            li.html HTML
             li.css CSS
             li.js JS
             li.html HTML
