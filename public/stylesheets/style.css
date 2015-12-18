@@ -23,22 +23,11 @@ body {
 .sidebar .nav {
   padding: 10px;
 }
-.sidebar .nav .search {
-  margin-top: 20px;
-}
-.sidebar .nav .search input {
-  width: calc(100% - 22px);
-  padding: 10px;
-  border: none;
-  border: 1px solid #fff;
-}
-.sidebar .nav .search input:hover,
-.sidebar .nav .search input:focus {
-  border: 1px solid #f2f2f2;
-  outline: none;
-}
 .sidebar .nav .filters {
   margin: 20px 0;
+}
+.sidebar .nav .filters .filter-category {
+  margin-bottom: 20px;
 }
 .sidebar .nav .filters .filter-category h2 {
   font-size: 18px;
@@ -54,18 +43,20 @@ body {
   overflow: hidden;
 }
 .sidebar .nav .filters .filter-category ul li {
-  padding: 5px 10px;
   margin-bottom: 5px;
   color: #fff;
   position: relative;
 }
-.sidebar .nav .filters .filter-category ul li.html {
+.sidebar .nav .filters .filter-category ul li.skill {
+  padding: 5px 10px;
+}
+.sidebar .nav .filters .filter-category ul li.skill.html {
   background: #FFAB91;
 }
-.sidebar .nav .filters .filter-category ul li.css {
+.sidebar .nav .filters .filter-category ul li.skill.css {
   background: #80DEEA;
 }
-.sidebar .nav .filters .filter-category ul li.js {
+.sidebar .nav .filters .filter-category ul li.skill.js {
   background: #C5E1A5;
 }
 .sidebar .nav .filters .filter-category ul li:after {
@@ -94,6 +85,18 @@ body {
   color: #fff;
   padding: 0 20px;
   background: #009688;
+}
+.header .search input {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin: 10px 0 0 10px;
+  border: none;
+  font-size: 18px;
+}
+.header .search input:hover,
+.header .search input:focus {
+  border: none;
+  outline: none;
 }
 .header .menu {
   flex: 1;
@@ -160,13 +163,23 @@ body {
   padding: 10px 0;
 }
 .content .person .information .slack {
-  background: url('images/slack.png') no-repeat;
+  background: url('/images/slack.png') no-repeat;
   background-size: 20px 20px;
   position: absolute;
   height: 20px;
   width: 20px;
   top: 10px;
   right: 10px;
+  text-indent: -9999px;
+}
+.content .person .information .git {
+  background: url('/images/git.png') no-repeat;
+  background-size: 20px 20px;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: 10px;
+  right: 40px;
   text-indent: -9999px;
 }
 .content .person .information ul.skills {
