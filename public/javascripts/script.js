@@ -21,7 +21,8 @@ $(document).ready(function(){
 			var jobRole = (employees[n].JobRole.DisplayValue).toLowerCase();
 			var department = (employees[n].Department.DisplayValue).toLowerCase();
 			var email = (employees[n].EmailId.DisplayValue).toLowerCase();
-			if (firstName.indexOf(searchterm) > -1 || jobRole.indexOf(searchterm) > -1 || surname.indexOf(searchterm) > -1 || department.indexOf(searchterm) > -1 || email.indexOf(searchterm) > -1) {
+			var query = firstName.indexOf(searchterm) > -1 || surname.indexOf(searchterm) > -1 || jobRole.indexOf(searchterm) > -1 || department.indexOf(searchterm) > -1 || email.indexOf(searchterm) > -1;
+			if (query) {
 				populateDom(employees[n]);
 			}
 		}
