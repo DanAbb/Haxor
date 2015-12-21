@@ -1,38 +1,60 @@
-// $(document).ready(function() {
+var employees = {}
+var department = [];
 
-// 	var bedePeepsData = [];
+searchQuery = function(dave) {
+	employees = dave;
+}
 
-// 	var jsonData={
-// 		APIKey: "37ce2890-aa84-4997-b204-2bab98c954c0",
-// 		Action: "GetAllEmployeeDetail",
-// 		IncludeLeavers:"false"
-// 	}
+$(document).ready(function(){
+	$('.search-term').on('keyup', function(){
+		$('.department li').removeClass('active');
+		var searchString = ($('.search-term').val()).toLowerCase();
+		createSearch(searchString);
+	});
 
-// 	$.ajax({
-// 	    url : "https://api.peoplehr.net/Employee",
-// 		type: 'post',
-// 	    dataType : 'json',
-// 		data: JSON.stringify(jsonData),
-// 	    success : function(data){
+	var createSearch = function(searchString) {
+		var searchterm = searchString.toLowerCase();
+		$('.content').html("");
+		for(var n in employees) {
+			var firstName = (employees[n].FirstName.DisplayValue).toLowerCase();
+			var surname = (employees[n].LastName.DisplayValue).toLowerCase();
+			var jobRole = (employees[n].JobRole.DisplayValue).toLowerCase();
+			var department = (employees[n].Department.DisplayValue).toLowerCase();
+			var email = (employees[n].EmailId.DisplayValue).toLowerCase();
+			var query = firstName.indexOf(searchterm) > -1 || surname.indexOf(searchterm) > -1 || jobRole.indexOf(searchterm) > -1 || department.indexOf(searchterm) > -1 || email.indexOf(searchterm) > -1;
+			if (query) {
+				populateDom(employees[n]);
+			}
+		}
+	}
 
-// 	    	for(var i in data.Result) {
-// 	    		var Employee = data.Result[i];
-// 	    		bedePeepsData.push(Employee);
-// 	    	}
-// 	    	// $('.employees').html(bedePeepsData[101].FirstName.DisplayValue);
+	var populateDom = function(employee) {
+		var person = "<div class='person'><div class='image'><div class='image-crop'><img src=" + employee.EmployeeImage + "></div></div><div class='information'><div class='name'>" + employee.FirstName.DisplayValue + " " + employee.LastName.DisplayValue + "</div><div class='job'>" + employee.JobRole.DisplayValue + "</div><div class='job'>" + employee.Department.DisplayValue + "</div><div class='location'>" + employee.Location.DisplayValue + "</div><a class='email' href='mailto:"+ employee.EmailId.DisplayValue +"'>" + employee.EmailId.DisplayValue + "</a><div class='slack'><a href='#'>slack</a></div><div class='git'><a href='#'>git</a></div><ul class='skills'><li class='css'>CSS</li><li class='js'>JS</li><li class='html'>HTML</li></ul></div></div>";
+		$('.content').append(person);
+	}
 
-// 	    	// findEmployee(bedePeepsData);
+	for(var n in employees) {
+		var dep = employees[n].Department.DisplayValue;
 
-// 	    }, error : function(err){
-// 			console.log('error');
-// 	      	//YOUR CODE FOR AJAX FAILURE
-// 	    }
-// 	});
+		if (department.indexOf(dep) <= -1) {
+			department.push(dep);
+		}
+	}
 
-// 	$('.dave').on('click', function(){
-// 		alert(bedePeepsData[0].FirstName.DisplayValue);
-// 	});
+	for (var n in department) {
+		$('.department').append("<li>" + department[n] + "</li>");
+	}
 
-// 	var findEmployee = function() {
-// 	}
-// });
+	$('.department li').on('click', function(){
+		$('.department li').removeClass('active');
+		$(this).addClass('active');
+		var searchString = this.innerHTML
+		createSearch(searchString);
+	});
+
+	$('.blame').on('click', function(){
+		var random = Math.floor(Math.random() * employees.length);
+		var searchString = employees[random].EmailId.DisplayValue;
+		createSearch(searchString);
+	});
+});

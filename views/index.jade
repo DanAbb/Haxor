@@ -3,11 +3,10 @@ extends layout
 block content
   .header
     .logo
-      h1 Bede People
+      h1 Bede Peeps
     .search
-      input(type='text', placeholder='Search')
-    .user
-      | User
+      input(type='text', placeholder='Search' class='search-term')
+    .user.blame Blame
   .sidebar
     .nav
       .filters
@@ -18,11 +17,8 @@ block content
             li.skill.js JS
             li.skill.html HTML
         .filter-category
-          h2 Role
-          ul
-            li Front End
-            li Back End
-            li Project Manager
+          h2 Department
+          ul.department
         .filter-category
           h2 Project
           ul
@@ -30,21 +26,6 @@ block content
             li Grosvenor Casino
             li Bingo Stars
   .content
-    each item in dave
-      .person
-        .image
-          .image-crop
-            img(src=item.EmployeeImage)
-        .information
-          .name 
-            span= item.FirstName.DisplayValue
-            span= item.LastName.DisplayValue
-          .job= item.JobRole.DisplayValue
-          .slack
-            a(href='') slack
-          .git
-            a(href='') git
-          ul.skills
-            li.css CSS
-            li.js JS
-            li.html HTML
+
+  script.
+    var query = searchQuery(!{JSON.stringify(dave)})
